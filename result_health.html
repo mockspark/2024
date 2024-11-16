@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Report</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #800080; 
+            color: #fff;
+            position: relative;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #ffffff32;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            color: #333; 
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .summary, .recommendations {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f4f4f4;
+            border-radius: 8px;
+        }
+        .summary h2, .recommendations h2 {
+            color: #555;
+        }
+        .data-point {
+            display: flex;
+            justify-content: space-between;
+            margin: 8px 0;
+            font-size: 16px;
+        }
+        .data-point span {
+            font-weight: bold;
+        }
+        .recommendations ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+        .logo {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 220px; 
+        }
+        .button-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 10px; 
+        }
+        .button {
+            padding: 10px 20px;
+            background-color: #a54caf; 
+            color: white;
+            font-size: 14px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            background-color: #922c9e;
+        }
+    </style>
+</head>
+<body>
+
+    <img src="logo_fix.png" alt="Logo" class="logo">
+
+    <div class="container">
+        <h1>Personalized Health Report</h1>
+        
+   
+        <div class="summary">
+            <h2>Summary of Health Metrics</h2>
+            <div class="data-point">
+                <p>Age:</p><span>45 years</span>
+            </div>
+            <div class="data-point">
+                <p>BMI:</p><span>28.5 (Overweight)</span>
+            </div>
+            <div class="data-point">
+                <p>Blood Pressure:</p><span>130/85 mmHg (Borderline High)</span>
+            </div>
+            <div class="data-point">
+                <p>HbA1c:</p><span>6.2% (Pre-diabetes)</span>
+            </div>
+            <div class="data-point">
+                <p>Cholesterol:</p><span>LDL: 140 mg/dL (High)</span>
+            </div>
+            <div class="data-point">
+                <p>Smoking Status:</p><span>Non-Smoker</span>
+            </div>
+            <div class="data-point">
+                <p>Physical Activity Level:</p><span>Low</span>
+            </div>
+            <ul>
+                <li>With a BMI of 28.5 (overweight), an HbA1c level of 6.2% in the pre-diabetic range, and a family history of diabetes, you are at a high risk of developing type 2 diabetes in the future.</li>
+                <li>Studies show that individuals in the pre-diabetes stage, if they do not implement appropriate interventions such as weight loss, increased physical activity, and dietary changes, typically develop diabetes within 5 to 10 years.</li>
+            </ul>
+        </div>
+
+        <div class="recommendations">
+            <h2>Health Recommendations</h2>
+            <ul>
+                <li>Achieve a normal BMI to reduce the risk of diabetes and certain types of cancer, especially breast and colorectal cancer.</li>
+                <li>Consume low-sugar, high-fiber foods, such as vegetables, whole grains, and lean proteins, to control blood sugar levels and manage BMI and cholesterol.</li>
+                <li>Limit consumption of processed meats and saturated fats, which are associated with an increased risk of cancer.</li>
+                <li>Follow a low-sodium diet and include omega-3 fatty acid-rich foods to manage blood pressure and cholesterol, indirectly reducing the risk of diabetes and cancer.</li>
+                <li>Monitor HbA1c levels every 3 to 6 months to assess pre-diabetes status.</li>
+                <li>Engage in at least 150 minutes of exercise per week (e.g., brisk walking, cycling, or swimming) to control weight, reduce insulin resistance, and lower cancer risk.</li>
+                <li>Practice stress-reducing activities such as meditation or yoga, which can help lower blood sugar levels and improve overall health.</li>
+                <li>Avoid sugary drinks and sweets to minimize the risk of progressing to diabetes.</li>
+                <li>Increase intake of antioxidant-rich foods such as berries, green tea, and nuts to reduce oxidative stress and the risk of cancer.</li>
+                <li>Reduce alcohol consumption, as excessive alcohol intake increases the risk of diabetes and cancer.</li>
+                <li>Perform regular blood sugar tests to monitor pre-diabetes and undergo cancer-related screenings (e.g., mammography or colonoscopy) due to a family history of cancer.</li>
+                <li>Consult your doctor about genetic counselling (for cancer) and preventive medications (e.g., metformin for pre-diabetes).</li>
+                <li>Schedule regular medical check-ups to track and manage your health indicators over time.</li>
+            </ul>
+        </div>
+    </div>
+
+ 
+    <div class="button-container">
+        <button class="button" onclick="downloadReport()">Download Report</button>
+        <button class="button" onclick="location.href='Results _Comparison_health.html'">Compare</button>
+        <button class="button" onclick="window.location.href='index.html'">Exit</button>
+    </div>
+
+    <script>
+        function downloadReport() {
+            const element = document.createElement("a");
+            const text = `
+Personalized Health Report:
+
+Summary of Health Metrics:
+- Age: 45 years
+- BMI: 28.5 (Overweight)
+- Blood Pressure: 130/85 mmHg (Borderline High)
+- HbA1c: 6.2% (Pre-diabetes)
+- Cholesterol: LDL: 140 mg/dL (High)
+- Smoking Status: Non-Smoker
+- Physical Activity Level: Low
+
+    With a BMI of 28.5 (overweight), an HbA1c level of 6.2% in the pre-diabetic range, and a family history of diabetes, you are at a high risk of developing type 2 diabetes in the future.
+    Studies show that individuals in the pre-diabetes stage, if they do not implement appropriate interventions such as weight loss, increased physical activity, and dietary changes, typically develop diabetes within 5 to 10 years.
+
+
+Health Recommendations:
+
+    
+    -Achieve a normal BMI to reduce the risk of diabetes and certain types of cancer, especially breast and colorectal cancer.
+    -Consume low-sugar, high-fiber foods, such as vegetables, whole grains, and lean proteins, to control blood sugar levels and manage BMI and cholesterol.
+    -Limit consumption of processed meats and saturated fats, which are associated with an increased risk of cancer.
+    -Follow a low-sodium diet and include omega-3 fatty acid-rich foods to manage blood pressure and cholesterol, indirectly reducing the risk of diabetes and cancer.
+    -Monitor HbA1c levels every 3 to 6 months to assess pre-diabetes status.
+    -Engage in at least 150 minutes of exercise per week (e.g., brisk walking, cycling, or swimming) to control weight, reduce insulin resistance, and lower cancer risk.
+    -Practice stress-reducing activities such as meditation or yoga, which can help lower blood sugar levels and improve overall health.
+    -Avoid sugary drinks and sweets to minimize the risk of progressing to diabetes.
+    -Increase intake of antioxidant-rich foods such as berries, green tea, and nuts to reduce oxidative stress and the risk of cancer.
+    -Reduce alcohol consumption, as excessive alcohol intake increases the risk of diabetes and cancer.
+    -Perform regular blood sugar tests to monitor pre-diabetes and undergo cancer-related screenings (e.g., mammography or colonoscopy) due to a family history of cancer.
+    -Consult your doctor about genetic counselling (for cancer) and preventive medications (e.g., metformin for pre-diabetes).
+    -Schedule regular medical check-ups to track and manage your health indicators over time.
+
+`;
+            const file = new Blob([text], { type: "text/plain" });
+            element.href = URL.createObjectURL(file);
+            element.download = "Health_Report.txt";
+            document.body.appendChild(element);
+            element.click();
+        }
+    </script>
+</body>
+</html>
